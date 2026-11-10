@@ -1,3 +1,4 @@
+Nomad job IDs for this run start with texttest-b13d3776-
 Using nomad queues for Application SLEEP
 Q: Submitting SLEEP test-case Basic to default nomad queue
 Q: Submitting SLEEP test-case Basic2 to default nomad queue

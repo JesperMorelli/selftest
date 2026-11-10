@@ -1,3 +1,4 @@
+Nomad job IDs for this run start with texttest-33efae9a-
 Using nomad queues for Application SLEEP, version killing
 Q: Submitting SLEEP.killing test-case Basic to default nomad queue
 S: SLEEP.killing test-case Basic not compared:
