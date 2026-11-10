@@ -4,7 +4,7 @@
 <-PYT:texttestlib.queuesystem.nomadapi.__path__
 ->RET:raise AttributeError("module 'texttestlib.queuesystem.nomadapi' has no attribute '__path__'")
 <-PYT:secrets.token_hex(4)
-->RET:'6d049b6a'
+->RET:'33efae9a'
 <-PYT:texttestlib.queuesystem.nomadapi.get('/v1/nodes', resources='true')
 ->RET:[{'Drivers': {'raw_exec': {'Detected': True, 'Healthy': True}},
   'ID': '438268a2-3930-b527-1b2d-d0f3800d00b8',
@@ -24,7 +24,8 @@
   'SchedulingEligibility': 'eligible',
   'Status': 'ready'}]
 <-PYT:texttestlib.queuesystem.nomadapi.request('POST', '/v1/jobs', {'Job': {'Constraints': [],
- 'ID': 'texttest-6d049b6a-Test-Basic-SLEEP.killing',
+ 'Datacenters': ['*'],
+ 'ID': 'texttest-33efae9a-1-Test-Basic-SLEEP.killing',
  'Name': 'Test-Basic-SLEEP.killing',
  'NodePool': 'default',
  'TaskGroups': [{'Count': 1,
@@ -32,37 +33,37 @@
  'ReschedulePolicy': {'Attempts': 0, 'Unlimited': False},
  'RestartPolicy': {'Attempts': 0, 'Mode': 'fail'},
  'Tasks': [{'Config': {'args': ['-d',
-          'C:\\Users\\jmh\\AppData\\Local\\Temp\\claude\\46e7f0ddbd402f86\\ebe205e2-1d6f-4f90-97a3-94dddade3b39\\scratchpad\\st-tmp\\ci.nomad.10Nov100741.35996\\texttest.nomad\\QueueSystems\\ErrorHandling\\Console\\PollSlaveCrash\\TargetApp',
+          'C:\\texttest-selftest\\st-tmp\\ci.nomad.10Nov115536.67920\\texttest.nomad\\QueueSystems\\ErrorHandling\\Console\\PollSlaveCrash\\TargetApp',
           '-a',
           'sleep.killing',
           '-l',
           '-tp',
           'Basic',
           '-slave',
-          'C:\\Users\\jmh\\AppData\\Local\\Temp\\claude\\46e7f0ddbd402f86\\ebe205e2-1d6f-4f90-97a3-94dddade3b39\\scratchpad\\st-tmp\\ci.nomad.10Nov100741.35996\\texttest.nomad\\QueueSystems\\ErrorHandling\\Console\\PollSlaveCrash\\texttesttmp\\sleep.killing.10Nov100742.12712',
+          'C:\\texttest-selftest\\st-tmp\\ci.nomad.10Nov115536.67920\\texttest.nomad\\QueueSystems\\ErrorHandling\\Console\\PollSlaveCrash\\texttesttmp\\sleep.killing.10Nov115538.71084',
           '-servaddr',
-          '127.0.0.1:53098',
+          '127.0.0.1:61712',
           '-b',
           'short_local'],
- 'command': 'C:\\Users\\jmh\\AppData\\Local\\Temp\\claude\\46e7f0ddbd402f86\\ebe205e2-1d6f-4f90-97a3-94dddade3b39\\scratchpad\\stvenv\\Scripts\\texttest'},
+ 'command': 'C:\\texttest-selftest\\stvenv\\Scripts\\texttest'},
  'Driver': 'raw_exec',
- 'Env': {'STANDARD': 'C:\\Users\\jmh\\AppData\\Local\\Temp\\claude\\46e7f0ddbd402f86\\ebe205e2-1d6f-4f90-97a3-94dddade3b39\\scratchpad\\st-tmp\\ci.nomad.10Nov100741.35996\\texttest.nomad\\QueueSystems\\ErrorHandling\\Console\\PollSlaveCrash\\standard'},
+ 'Env': {'STANDARD': 'C:\\texttest-selftest\\st-tmp\\ci.nomad.10Nov115536.67920\\texttest.nomad\\QueueSystems\\ErrorHandling\\Console\\PollSlaveCrash\\standard'},
  'Name': 'slave',
  'Resources': {'CPU': 3000}}]}],
  'Type': 'batch'}})
-->RET:{'EvalCreateIndex': 1363,
- 'EvalID': '076f8018-414a-5de4-fb37-1ca18db84b6c',
- 'Index': 1363,
- 'JobModifyIndex': 1363,
+->RET:{'EvalCreateIndex': 1611,
+ 'EvalID': '60afac7e-5ce0-49f2-d74a-a9ac3aac969c',
+ 'Index': 1611,
+ 'JobModifyIndex': 1611,
  'KnownLeader': False,
  'LastContact': 0,
  'NextToken': '',
  'Warnings': ''}
-<-PYT:texttestlib.queuesystem.nomadapi.get('/v1/jobs', prefix='texttest-6d049b6a-')
-->RET:[{'ID': 'texttest-6d049b6a-Test-Basic-SLEEP.killing', 'Status': 'dead'}]
-<-PYT:texttestlib.queuesystem.nomadapi.get('/v1/job/texttest-6d049b6a-Test-Basic-SLEEP.killing/allocations')
+<-PYT:texttestlib.queuesystem.nomadapi.get('/v1/jobs', prefix='texttest-33efae9a-')
+->RET:[{'ID': 'texttest-33efae9a-1-Test-Basic-SLEEP.killing', 'Status': 'dead'}]
+<-PYT:texttestlib.queuesystem.nomadapi.get('/v1/job/texttest-33efae9a-1-Test-Basic-SLEEP.killing/allocations')
 ->RET:[{'ClientStatus': 'failed',
-  'ID': 'ed0797e5-5b43-b38e-73cd-312bf3cf4469',
+  'ID': '00b2ebf7-b50e-f9bb-27ff-7a68bf9846e4',
   'NodeName': 'PDC-1693',
   'TaskStates': {'slave': {'Events': [{'DisplayMessage': 'Task received by client', 'Type': 'Received'},
                                       {'DisplayMessage': 'Building Task Directory', 'Type': 'Task Setup'},
@@ -70,8 +71,5 @@
                                       {'DisplayMessage': 'Exit Code: 1', 'Type': 'Terminated'},
                                       {'DisplayMessage': 'Policy allows no restarts', 'Type': 'Not Restarting'}],
                            'Failed': True}}}]
-<-PYT:texttestlib.queuesystem.nomadapi.request('GET', '/v1/client/fs/logs/ed0797e5-5b43-b38e-73cd-312bf3cf4469', params={'offset': 4096, 'origin': 'end', 'plain': 'true', 'task': 'slave', 'type': 'stderr'}, parseJson=False)
-->RET:("Unable to load application from file 'config.sleep' - Cannot find file '$STANDARD_PERSONAL' to import config file settings "
- 'from.\r\n'
- "Tried directories: ['C:\\\\projects\\\\git\\\\texttest\\\\texttestlib\\\\etc', 'C:\\\\Users\\\\jmh\\\\.texttest\\\\etc', "
- "'C:\\\\Users\\\\jmh\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\46e7f0ddbd402f86\\\\ebe205e2-1d6f-4f90-97a3-94dddade3b39\\\\scratchpad\\\\st-tmp\\\\ci.nomad.10Nov100741.35996\\\\texttest.nomad\\\\QueueSystems\\\\ErrorHandling\\\\Console\\\\PollSlaveCrash\\\\TargetApp'].\r\n")
+<-PYT:texttestlib.queuesystem.nomadapi.request('GET', '/v1/client/fs/logs/00b2ebf7-b50e-f9bb-27ff-7a68bf9846e4', params={'offset': 4096, 'origin': 'end', 'plain': 'true', 'task': 'slave', 'type': 'stderr'}, parseJson=False)
+->RET:"Unable to load application from file 'config.sleep' - Cannot find file '$STANDARD_PERSONAL' to import config file settings from.\n"

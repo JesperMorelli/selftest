@@ -1,8 +1,8 @@
 Using nomad queues for Application SLEEP
 Q: Submitting SLEEP test-case Basic to default nomad queue
 Q: Submitting SLEEP test-case Basic2 to default nomad queue
-S: SLEEP test-case Basic2 FAILED on PDC-1693 : new results in errors,output
 S: SLEEP test-case Basic succeeded on PDC-1693
+S: SLEEP test-case Basic2 FAILED on PDC-1693 : new results in errors,output
 Results:
 
 Tests that did not succeed:

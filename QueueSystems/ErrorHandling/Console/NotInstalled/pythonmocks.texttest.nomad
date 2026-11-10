@@ -8,5 +8,4 @@
 <-PYT:texttestlib.queuesystem.nomadapi.get('/v1/nodes', resources='true')
 ->RET:raise Instance('NomadError(Exception)', 'nomaderror__v1_nodes')
 <-PYT:nomaderror__v1_nodes.__str__()
-->RET:('could not contact Nomad at http://127.0.0.1:1: [WinError 10061] No connection could be made because the target machine '
- 'actively refused it')
+->RET:'could not contact Nomad at http://127.0.0.1:1: Connection refused'
