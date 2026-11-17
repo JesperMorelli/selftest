@@ -50,6 +50,7 @@
  'command': 'C:\\projects\\git\\texttest\\bin\\texttest'},
  'Driver': 'raw_exec',
  'Env': {'STANDARD': 'C:\\projects\\git\\texttest\\build\\tttmp\\texttest.nomad.16Nov162439.61032\\texttest.nomad\\QueueSystems\\ErrorHandling\\Console\\PollSlaveCrash\\standard'},
+ 'KillTimeout': 60000000000,
  'Name': 'slave',
  'Resources': {'CPU': 3000}}]}],
  'Type': 'batch'}})

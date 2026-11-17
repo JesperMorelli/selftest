@@ -53,6 +53,7 @@
  'STANDARD': 'C:\\projects\\git\\texttest\\build\\tttmp\\texttest.nomad.16Nov162439.61032\\texttest.nomad\\QueueSystems\\NormalOperation\\Console\\Batch2Tests\\standard',
  'STANDARD_PERSONAL': 'C:\\projects\\git\\texttest\\build\\tttmp\\texttest.nomad.16Nov162439.61032\\texttest.nomad\\QueueSystems\\NormalOperation\\Console\\Batch2Tests\\standard_personal',
  'TEXTTEST_PICKLE_PROTOCOL': '0'},
+ 'KillTimeout': 60000000000,
  'Name': 'slave',
  'Resources': {'CPU': 3000}}]}],
  'Type': 'batch'}})
@@ -103,6 +104,7 @@
  'STANDARD': 'C:\\projects\\git\\texttest\\build\\tttmp\\texttest.nomad.16Nov162439.61032\\texttest.nomad\\QueueSystems\\NormalOperation\\Console\\Batch2Tests\\standard',
  'STANDARD_PERSONAL': 'C:\\projects\\git\\texttest\\build\\tttmp\\texttest.nomad.16Nov162439.61032\\texttest.nomad\\QueueSystems\\NormalOperation\\Console\\Batch2Tests\\standard_personal',
  'TEXTTEST_PICKLE_PROTOCOL': '0'},
+ 'KillTimeout': 60000000000,
  'Name': 'slave',
  'Resources': {'CPU': 3000}}]}],
  'Type': 'batch'}})
